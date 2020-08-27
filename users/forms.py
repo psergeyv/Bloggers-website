@@ -6,10 +6,7 @@ User = get_user_model()
 
 
 # создадим собственный класс для формы регистрации
-# сделаем его наследником предустановленного класса UserCreationForm
 class CreationForm(UserCreationForm):
-        class Meta(UserCreationForm.Meta):
-                # модель уже существует, сошлёмся на неё
-                model = User
-                # укажем, какие поля должны быть видны в форме и в каком порядке
+        class Meta(UserCreationForm.Meta):                
+                model = User                
                 fields = ("first_name", "last_name", "username", "email")
